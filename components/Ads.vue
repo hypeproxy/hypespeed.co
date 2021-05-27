@@ -22,7 +22,9 @@ export default {
 		pop: function () {
 			if(process.client) {
 				let bootstrap = require('bootstrap');
-				new bootstrap.Toast(document.getElementById('popup')).show();
+				new bootstrap.Toast(document.getElementById('popup'), {
+					autohide: false
+				}).show();
 			}
 		}
 	}
