@@ -1,3 +1,3 @@
 # hypespeed.co
 
-An alternative to fast.com
+A fast.com alternative powered by HypeProxy.io
