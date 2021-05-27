@@ -28,7 +28,7 @@ export default {
 	},
 	async mounted() {
 		let startDate = performance.now();
-		await this.$axios.get('http://cdn.hypeproxy.io:9090/100mb.bin', {
+		await this.$axios.get('https://cdn.hypeproxy.io:9090/100mb.bin', {
 			onDownloadProgress: progressEvent => {
 				const total = parseFloat(progressEvent.currentTarget.getResponseHeader('Content-Length'))
 				const current = progressEvent.currentTarget.response.length
