@@ -2,25 +2,19 @@
   <div class="text-center">
 <!--	  <img :src="require('~/assets/hype-min.png')" class="mb-4" alt="hypeproxy.io logo" />-->
 	  <h1 v-if="status === 100" class="status fw-bold">
-		  {{ getSpeed() }} MB/s
+		  {{ getSpeed() }} Mb/s
 	  </h1>
 	  <h1 v-else class="status fw-bold">
 		  {{ status }}%
 	  </h1>
 	  <p v-if="timespan === 0" class="lead text-muted">Downloading 100 megabytes of random data.</p>
 	  <p v-else class="lead text-muted">
-		  Successfully completed speedtest, 100Mb downloaded in {{ test() }}.
+		  Successfully completed speedtest, 100MB downloaded in {{ test() }}.
 	  </p>
-<!--	  <h1 class="display-1 fw-bold">HypeSpeed.co</h1>-->
-<!--	  <p class="h3 fw-light mb-4">A fast.com alternative powered by HypeProxy.io</p>-->
-<!--	  <div class="mb-5">-->
-<!--		  <a class="btn btn-dark btn-lg" href="https://medium.com/@clintnetwork/lucid-an-http-key-value-store-c0e734586e26">-->
-<!--			  <i class="bx bxs-hot me-1"></i> Visit HypeProxy.io-->
-<!--		  </a>-->
-<!--		  <a class="btn btn-outline-dark btn-lg" href="https://docs.lucid-kv.store/">-->
-<!--			  <i class="fas fa-book"></i>&nbsp; Official Documentation-->
-<!--		  </a>-->
-<!--	  </div>-->
+<!--	  <button v-if="status === 100" class="btn btn-lg btn-outline-secondary mt-4 d-inline-flex align-items-center">-->
+<!--		  <i class="bx bx-info-circle me-2"></i>-->
+<!--		  More Informations-->
+<!--	  </button>-->
   </div>
 </template>
 
@@ -59,7 +53,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 img
 {
 	width: 177px;
@@ -68,5 +62,13 @@ img
 .status
 {
 	font-size: 10em;
+}
+
+@media (max-width: 992px)
+{
+	.status
+	{
+		font-size: 5em;
+	}
 }
 </style>
